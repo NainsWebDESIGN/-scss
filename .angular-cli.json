@@ -7,10 +7,7 @@
     {
       "root": "src",
       "outDir": "dist",
-      "assets": [
-        "assets",
-        "favicon.ico"
-      ],
+      "assets": ["favicon.ico"],
       "index": "index.html",
       "main": "main.ts",
       "polyfills": "polyfills.ts",
@@ -19,7 +16,20 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "styles.css"
+        {
+          "input": "scss/light-theme.scss",
+          "bundleName": "light-theme",
+          "lazy": false,
+          "inject": false,
+          "output": "css/light-theme"
+        },
+        {
+          "input": "scss/dark-theme.scss",
+          "bundleName": "dark-theme",
+          "lazy": true,
+          "inject": false,
+          "output": "css/dark-theme"
+        }
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",
@@ -54,7 +64,15 @@
     }
   },
   "defaults": {
-    "styleExt": "css",
-    "component": {}
+    "styleExt": "scss",
+    "component": {
+      "spec": false
+    },
+    "service": {
+      "spec": false
+    },
+    "pipe": {
+      "spec": false
+    }
   }
 }
